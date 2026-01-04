@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>Hello HTMX!</h1>
-    <button hx-post="/clicked" hx-swap="outerHTML">Click me</button>
+    <form hx-post="/message" hx-target="#response" hx-swap="innerHTML">
+        <label for="userInput">Enter something:</label>
+        <input type="text" id="userInput" name="userInput" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response"></div>
 </body>
 </html>
